@@ -44,6 +44,28 @@
                     var barHeight = d * 5;  // Scale up by factor of 5
                     return barHeight + "px";
                 });
+
+            // d3.select("div#chartId")
+            //    .append("div")
+            //    .classed("svg-container", true) //container class to make it responsive
+            //    .append("svg")
+            //    //responsive SVG needs these 2 attributes and no width and height attr
+            //    .attr("preserveAspectRatio", "xMinYMin meet")
+            //    .attr("viewBox", "0 0 600 400")
+            //    //class to make it responsive
+            //    .classed("svg-content-responsive", true); 
+
+            // var svg = d3.xml("data/histomap_condensed.svg", "image/svg+xml", function(xml) {
+            //     document.body.appendChild(xml.documentElement);
+            // });
+            // svg.attr("transform", "scale(.1)")
+
+            // var nodes = d3.select(importedNode).selectAll("g");
+            // _.each(nodes, function(node) {
+            //          console.log(node); <-- logs the g I want to append  
+            //          d3.select("#nav").node().appendChild(node) <--- doesn't work - I'm thinking I may need to clone it or something../ or recreate the g somehow?!
+            // });
+            
         </script>
     </body>
 </html>  
