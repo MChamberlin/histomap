@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.js"></script>
+        <style type="text/css">
+            div.bar {
+                display: inline-block;
+                width: 20px;
+                height: 75px;   /* We'll override this later */
+                background-color: teal;
+                margin-right: 2px;
+            }
+            .svg-container {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                padding-bottom: 100%; /* aspect ratio */
+                vertical-align: top;
+                overflow: hidden;
+            }
+            .svg-content-responsive {
+                display: inline-block;
+                position: absolute;
+                top: 10px;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var dataset = [];
+            for (var i = 0; i < 25; i++) {
+                var newNumber = Math.round(Math.random() * 30);
+                dataset.push(newNumber);
+            }
+            d3.select("body").selectAll("div")
+                .data(dataset)
+                .enter()
+                .append("div")
+                .attr("class", "bar")
+                .style("height", function(d) {
+                    var barHeight = d * 5;  // Scale up by factor of 5
+                    return barHeight + "px";
+                });
+        </script>
+    </body>
+</html>  
